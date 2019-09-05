@@ -1,0 +1,18 @@
+<h1><%= @user.name %>'s Profile</h1>
+<h2>Recipes</h2>
+  <ul>
+    <li><% @user.recipes.each do |recipe| %>
+      <%= link_to recipe.name, recipe_path(recipe) %>
+      <% end %></li>
+    </ul>
+
+<h2>Allergies</h2>
+  <ul>
+    <li><% @user.ingredients.each do |allergy| %>
+      <%= allergy.name %>
+      <% end %></li>
+    </ul>
+
+<%= link_to "Edit This User", edit_user_path(@user) %><BR>
+<%= link_to "Delete This User", user_path(@user), method: :delete %><BR>
+<%= link_to "View All Users", users_path %>

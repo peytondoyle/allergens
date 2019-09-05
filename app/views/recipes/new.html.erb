@@ -1,0 +1,12 @@
+<h1>Make a New Recipe</h1>
+
+<%= render partial: "shared/error_list", locals:{new_object: @recipe} %>
+
+<%= form_for @recipe do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><BR>
+  <%= f.label :user_id %>
+  <%= f.collection_select(:user_id, User.all, :id, :name, prompt: true) %><BR>
+  <%= f.collection_check_boxes(:ingredient_ids, Ingredient.all, :id, :name) %><BR>
+<%= f.submit "Create Recipe" %>
+<% end %>

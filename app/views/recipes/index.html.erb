@@ -1,0 +1,9 @@
+<h1>All Recipes</h1>
+<img src="https://media1.giphy.com/media/o9ggk5IMcYlKE/source.gif">
+  <ul>
+    <% @recipes.each do |recipe| %>
+    <li><%= link_to recipe.name, recipe_path(recipe) %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Create a New Recipe", new_recipe_path %><BR>

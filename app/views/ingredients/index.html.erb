@@ -1,0 +1,9 @@
+<h1>All Ingredients</h1>
+<h3>Ingredients are ordered by the amount of people allergic to it, in descending order.</h3>
+  <ul>
+    <% @everything.each do |ingredient| %>
+    <li><%= link_to ingredient.name, ingredient_path(ingredient) %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Create a New Recipe", new_recipe_path %><BR>
